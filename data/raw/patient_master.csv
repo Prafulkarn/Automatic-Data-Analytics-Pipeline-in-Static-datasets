@@ -1,0 +1,11 @@
+patient_id,patient_name,gender,age,city
+PT001,Aarav Mehta,Male,45,Pune
+PT002,Sana Khan,Female,31,Mumbai
+PT003,Rohan Iyer,Male,59,Nashik
+PT004,Priya Das,Female,27,Pune
+PT005,Anjali Rao,Female,66,Nagpur
+PT006,Vikram Shah,Male,52,Mumbai
+PT007,Neha Patil,Female,38,Pune
+PT008,Karan Gupta,Male,41,Thane
+PT009,Isha Kulkarni,Female,34,Aurangabad
+PT010,Rajat Verma,Male,49,Navi Mumbai

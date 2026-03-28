@@ -1,0 +1,13 @@
+visit_id,patient_id,admission_ts,discharge_ts,department,diagnosis,admission_type
+VST-00001,PT001,2026-03-24T08:15:00,2026-03-25T09:30:00,Cardiology,Hypertension,Emergency
+VST-00002,PT002,2026-03-24T10:20:00,2026-03-24T18:10:00,General Medicine,Infection,Elective
+VST-00003,PT003,2026-03-25T07:50:00,2026-03-27T12:30:00,Neurology,Migraine,Referral
+VST-00004,PT004,2026-03-25T12:05:00,2026-03-26T11:20:00,Orthopedics,Fracture,Emergency
+VST-00005,PT005,2026-03-25T15:40:00,2026-03-28T09:10:00,Cardiology,Hypertension,Referral
+VST-00006,PT006,2026-03-26T09:25:00,2026-03-27T08:30:00,Pediatrics,Infection,Elective
+VST-00007,PT007,2026-03-26T14:10:00,2026-03-27T16:45:00,General Medicine,Diabetes,Emergency
+VST-00008,PT008,2026-03-27T08:35:00,2026-03-27T20:15:00,Orthopedics,Fracture,Elective
+VST-00009,PT009,2026-03-27T11:00:00,2026-03-28T10:10:00,Neurology,Migraine,Emergency
+VST-00010,PT010,2026-03-28T06:45:00,2026-03-28T19:30:00,Cardiology,Hypertension,Elective
+VST-00011,PT003,2026-03-28T09:30:00,2026-03-29T09:00:00,General Medicine,Diabetes,Referral
+VST-00012,PT006,2026-03-28T13:10:00,2026-03-29T13:40:00,Pediatrics,Infection,Emergency
