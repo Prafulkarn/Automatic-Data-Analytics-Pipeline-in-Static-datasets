@@ -46,7 +46,7 @@ def append_new_data(num_new_visits: int = 3) -> None:
         last_num = 0
 
     # NEW: Force visit count between 10 and 100
-    num_new_visits = random.randint(10, 100) 
+    num_new_visits = random.randint(8, 15) 
     
     print(f"[DataGenerator] Generating {num_new_visits} new visits starting from VST-{last_num+1:05d}...")
 
@@ -57,7 +57,7 @@ def append_new_data(num_new_visits: int = 3) -> None:
         visit_id = f"VST-{last_num + i:05d}"
         
         # NEW: Set random date within the last 60 days
-        day_offset = random.randint(0, 60)
+        day_offset = random.randint(0, 1)
         hour_offset = random.randint(0, 23)
         admit_ts = now - timedelta(days=day_offset, hours=hour_offset)
         

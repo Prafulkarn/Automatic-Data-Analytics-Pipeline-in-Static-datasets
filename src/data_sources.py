@@ -75,9 +75,9 @@ def generate_sample_files_if_missing() -> None:
             ("T104", "Physiotherapy", 1500),
             ("T105", "CT Scan", 6500),
         ]
-
-        for i in range(1, 81):
+        for i in range(1, visit_num):   # ← match however many visits were generated
             visit_id = f"VST-{i:05d}"
+
             for _ in range(rng.randint(1, 3)):
                 code, name, base_cost = rng.choice(treatment_catalog)
                 treatment_rows.append(
