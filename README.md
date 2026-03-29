@@ -109,7 +109,8 @@ After each successful run, reports are generated in `data/output/`:
 1. Create environment and install dependencies:
 
 ```powershell
-python -m venv .venv
+python3 -m venv .venv
+source .venv/bin/activate//mac
 .\.venv\Scripts\Activate.ps1
 pip install -r requirements.txt
 ```
@@ -124,6 +125,18 @@ python run_pipeline.py
 
 ```powershell
 python run_scheduler.py --demo
+
+
+//remove database
+
+
+ sqlite3 data/hospital_analytics.db
+.mode column
+.headers on
+
+
+
+
 ```
 
 ## Expected Outcome
