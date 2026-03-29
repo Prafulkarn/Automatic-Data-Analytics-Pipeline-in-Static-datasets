@@ -127,7 +127,7 @@ python run_pipeline.py
 python run_scheduler.py --demo
 
 
-//remove database
+rm data/hospital_analytics.db //remove database
 
 
  sqlite3 data/hospital_analytics.db
