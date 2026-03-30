@@ -126,6 +126,8 @@ python run_pipeline.py
 ```powershell
 python run_scheduler.py --demo
 
+streamlit run dashboard.py   
+
 
 rm data/hospital_analytics.db //remove database
 
