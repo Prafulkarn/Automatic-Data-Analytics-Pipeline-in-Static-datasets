@@ -6,3 +6,4 @@ data/output/*
 !data/output/.gitkeep
 data/hospital_analytics.db
 
+.DS_Store
