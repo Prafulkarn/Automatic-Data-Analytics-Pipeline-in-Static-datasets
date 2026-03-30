@@ -4,3 +4,4 @@ __pycache__/
 logs/*.log
 data/output/*
 !data/output/.gitkeep
+data/hospital_analytics.db
