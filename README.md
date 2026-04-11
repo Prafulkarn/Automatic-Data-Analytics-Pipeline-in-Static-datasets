@@ -126,6 +126,19 @@ python run_pipeline.py
 python run_scheduler.py --demo
 ```
 
+4. Run interactive Streamlit dashboard:
+
+```powershell
+streamlit run app.py
+```
+
+The dashboard provides:
+
+- one-click pipeline execution,
+- latest pipeline run status and row metrics,
+- interactive KPI filtering by department and admission type,
+- built-in chart and executive report preview from `data/output/`.
+
 ## Expected Outcome
 
 After running, you will have:
