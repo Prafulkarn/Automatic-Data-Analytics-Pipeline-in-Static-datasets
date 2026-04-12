@@ -15,6 +15,7 @@ The pipeline combines multiple real-world style hospital sources:
   - Visit-level treatment and billing records.
 
 If source files are missing, the pipeline auto-generates sample data for reproducible testing.
+You can also force regeneration of sample data to make each run dynamic.
 
 ## 2) ETL Process
 
@@ -120,10 +121,28 @@ pip install -r requirements.txt
 python run_pipeline.py
 ```
 
+To regenerate fresh sample data for this run:
+
+```powershell
+python run_pipeline.py --refresh-sample-data
+```
+
+To regenerate with a fixed seed (reproducible dynamic data):
+
+```powershell
+python run_pipeline.py --refresh-sample-data --sample-seed 123
+```
+
 3. Run scheduler (demo mode every minute):
 
 ```powershell
 python run_scheduler.py --demo
+```
+
+To regenerate sample data on each scheduled run:
+
+```powershell
+python run_scheduler.py --demo --refresh-sample-data
 ```
 
 4. Run interactive Streamlit dashboard:

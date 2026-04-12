@@ -13,7 +13,10 @@ from .reporting import generate_reports
 from .storage import log_pipeline_run, save_curated_data
 
 
-def run_pipeline() -> dict:
+def run_pipeline(
+    refresh_sample_data: bool = False,
+    sample_seed: int | None = None,
+) -> dict:
     """Run one end-to-end hospital analytics pipeline execution."""
     logger = setup_logging()
     run_id = str(uuid4())
@@ -30,7 +33,10 @@ def run_pipeline() -> dict:
     logger.info("Pipeline run started | run_id=%s", run_id)
 
     try:
-        generate_sample_files_if_missing()
+        generate_sample_files_if_missing(
+            force_refresh=refresh_sample_data,
+            seed=sample_seed,
+        )
         admissions_df, treatments_df, patients_df = extract_data()
         source_rows = len(admissions_df) + len(treatments_df)
 

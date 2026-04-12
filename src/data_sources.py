@@ -1,4 +1,5 @@
 from datetime import datetime, timedelta
+from pathlib import Path
 from random import Random
 
 import pandas as pd
@@ -29,13 +30,19 @@ def _generate_patient_master() -> pd.DataFrame:
     )
 
 
-def generate_sample_files_if_missing() -> None:
-    """Create sample hospital files when raw sources are not available."""
+def generate_sample_files_if_missing(
+    force_refresh: bool = False,
+    seed: int | None = None,
+) -> None:
+    """Create sample hospital files when raw sources are not available.
+
+    When force_refresh=True, existing sample files are replaced with newly generated data.
+    """
     RAW_DIR.mkdir(parents=True, exist_ok=True)
-    rng = Random(42)
+    rng = Random(seed if seed is not None else int(datetime.now().timestamp()))
 
     patients_df = _generate_patient_master()
-    if not PATIENT_SOURCE_PATH.exists():
+    if force_refresh or not PATIENT_SOURCE_PATH.exists():
         patients_df.to_csv(PATIENT_SOURCE_PATH, index=False)
 
     departments = ["Cardiology", "Orthopedics",
@@ -44,7 +51,7 @@ def generate_sample_files_if_missing() -> None:
     diagnosis = ["Hypertension", "Fracture",
                  "Migraine", "Diabetes", "Infection"]
 
-    if not ADMISSION_SOURCE_PATH.exists():
+    if force_refresh or not ADMISSION_SOURCE_PATH.exists():
         admission_rows = []
         now = datetime.now()
         for i in range(1, 81):
@@ -65,7 +72,7 @@ def generate_sample_files_if_missing() -> None:
             )
         pd.DataFrame(admission_rows).to_csv(ADMISSION_SOURCE_PATH, index=False)
 
-    if not TREATMENT_SOURCE_PATH.exists():
+    if force_refresh or not TREATMENT_SOURCE_PATH.exists():
         treatment_rows = []
         treatment_catalog = [
             ("T100", "ECG", 1200),
@@ -93,10 +100,14 @@ def generate_sample_files_if_missing() -> None:
         pd.DataFrame(treatment_rows).to_csv(TREATMENT_SOURCE_PATH, index=False)
 
 
-def extract_data() -> tuple[pd.DataFrame, pd.DataFrame, pd.DataFrame]:
+def extract_data(
+    patient_source_path: Path | None = None,
+    admission_source_path: Path | None = None,
+    treatment_source_path: Path | None = None,
+) -> tuple[pd.DataFrame, pd.DataFrame, pd.DataFrame]:
     """Extract admission, treatment, and patient master datasets."""
-    patients_df = pd.read_csv(PATIENT_SOURCE_PATH)
-    admissions_df = pd.read_csv(ADMISSION_SOURCE_PATH)
-    treatments_df = pd.read_csv(TREATMENT_SOURCE_PATH)
+    patients_df = pd.read_csv(patient_source_path or PATIENT_SOURCE_PATH)
+    admissions_df = pd.read_csv(admission_source_path or ADMISSION_SOURCE_PATH)
+    treatments_df = pd.read_csv(treatment_source_path or TREATMENT_SOURCE_PATH)
 
     return admissions_df, treatments_df, patients_df

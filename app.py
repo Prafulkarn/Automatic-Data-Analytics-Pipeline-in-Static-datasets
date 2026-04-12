@@ -45,9 +45,14 @@ def render_header() -> None:
 def render_controls() -> None:
     col1, col2 = st.columns([1, 1])
     with col1:
+        regenerate = st.checkbox(
+            "Regenerate sample data before run",
+            value=False,
+            help="Useful for creating fresh demo data each pipeline run.",
+        )
         if st.button("Run Pipeline Now", type="primary"):
             with st.spinner("Running pipeline..."):
-                result = run_pipeline()
+                result = run_pipeline(refresh_sample_data=regenerate)
             load_table.clear()
 
             if result.get("status") == "success":
