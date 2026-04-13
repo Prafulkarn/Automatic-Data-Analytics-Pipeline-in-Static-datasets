@@ -78,7 +78,7 @@ This enables historical monitoring and pipeline health checks.
 
 After each successful run, reports are generated in `data/output/`:
 
-- `daily_hospital_summary.csv` (tabular KPI output)
+- `daily_hospital_summary.csv` (tabular KPI output in a csv file)
 - `daily_patient_volume.png` (daily visit trend)
 - `hospital_executive_report.md` (human-readable business summary)
 
