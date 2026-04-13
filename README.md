@@ -1,7 +1,7 @@
 # Hospital Analytics Pipeline (Python)
 
 This project implements an end-to-end automated analytics pipeline for a **hospital organization**.
-It is intentionally simple, but includes all required enterprise pipeline components.
+It is dynamic and includes all required enterprise pipeline components.
 
 ## 1) Data Sources
 
