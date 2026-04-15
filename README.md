@@ -170,3 +170,4 @@ After running, you will have:
 
 - Commit 1: documentation touch-up for contribution tracking.
 - Commit 2: incremental README update for commit sequence.
+- Commit 3: final sequential docs commit for contribution graph.
