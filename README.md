@@ -169,3 +169,4 @@ After running, you will have:
 ## README Update Log (2026-04-16)
 
 - Commit 1: documentation touch-up for contribution tracking.
+- Commit 2: clarified that updates are documentation-only and non-functional.
