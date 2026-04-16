@@ -170,3 +170,4 @@ After running, you will have:
 
 - Commit 1: documentation touch-up for contribution tracking.
 - Commit 2: clarified that updates are documentation-only and non-functional.
+- Commit 3: final README-only commit to complete today’s sequential activity.
