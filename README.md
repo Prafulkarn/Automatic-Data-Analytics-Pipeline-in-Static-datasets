@@ -3,7 +3,7 @@
 This project implements an end-to-end automated analytics pipeline for a **hospital organization**.
 It is dynamic and includes all required enterprise pipeline components.
 
-## 1) Data Sources
+## 1) Data Sources used:
 
 The pipeline combines multiple real-world style hospital sources:
 
